@@ -1,17 +1,9 @@
 version: '3'
 services:
   nginx:
-    image: nginx:1.15-alpine
+    image: nginx:stable-alpine
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./data/nginx:/etc/nginx/conf.d
-      - ./data/certbot/conf:/etc/letsencrypt
-      - ./data/certbot/www:/var/www/certbot
       - ./html:/usr/share/nginx/html
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - ./data/certbot/conf:/etc/letsencrypt
-      - ./data/certbot/www:/var/www/certbot
