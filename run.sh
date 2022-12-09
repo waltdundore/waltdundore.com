@@ -1,6 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
-docker build . -t my_app
-
-docker-compose up
-
+docker run -p 443:443 --name waltweb 
